@@ -1,0 +1,18 @@
+name: riverpod_todos
+description: A todos app using Flutter and riverpod
+pblish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uuid: ^3.0.6
+  flutter_riverpod: ^2.0.0-dev.3
+  hooks_riverpod: ^2.0.0-dev.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
