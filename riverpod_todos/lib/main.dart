@@ -206,7 +206,7 @@ class Toolbar extends HookConsumerWidget {
               style: ButtonStyle(
                 visualDensity: VisualDensity.compact,
                 foregroundColor: MaterialStateProperty.all(
-                  textColorFor(TodoListFilter.active),
+                  textColorFor(TodoListFilter.completed),
                 ),
               ),
             ),
