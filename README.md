@@ -2,4 +2,5 @@
 Examples using riverpod library
 
 - riverpod_counter
-_ riverpod_todos
+- riverpod_todos
+- riverpod_marvel

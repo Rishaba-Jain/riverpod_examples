@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CharacterPAginationTearOff {
-  const _$CharacterPAginationTearOff();
+class _$CharacterPaginationTearOff {
+  const _$CharacterPaginationTearOff();
 
   _CharacterPagination call({required int page, String? name}) {
     return _CharacterPagination(
@@ -25,34 +25,34 @@ class _$CharacterPAginationTearOff {
 }
 
 /// @nodoc
-const $CharacterPAgination = _$CharacterPAginationTearOff();
+const $CharacterPagination = _$CharacterPaginationTearOff();
 
 /// @nodoc
-mixin _$CharacterPAgination {
+mixin _$CharacterPagination {
   int get page => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CharacterPAginationCopyWith<CharacterPAgination> get copyWith =>
+  $CharacterPaginationCopyWith<CharacterPagination> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CharacterPAginationCopyWith<$Res> {
-  factory $CharacterPAginationCopyWith(
-          CharacterPAgination value, $Res Function(CharacterPAgination) then) =
-      _$CharacterPAginationCopyWithImpl<$Res>;
+abstract class $CharacterPaginationCopyWith<$Res> {
+  factory $CharacterPaginationCopyWith(
+          CharacterPagination value, $Res Function(CharacterPagination) then) =
+      _$CharacterPaginationCopyWithImpl<$Res>;
   $Res call({int page, String? name});
 }
 
 /// @nodoc
-class _$CharacterPAginationCopyWithImpl<$Res>
-    implements $CharacterPAginationCopyWith<$Res> {
-  _$CharacterPAginationCopyWithImpl(this._value, this._then);
+class _$CharacterPaginationCopyWithImpl<$Res>
+    implements $CharacterPaginationCopyWith<$Res> {
+  _$CharacterPaginationCopyWithImpl(this._value, this._then);
 
-  final CharacterPAgination _value;
+  final CharacterPagination _value;
   // ignore: unused_field
-  final $Res Function(CharacterPAgination) _then;
+  final $Res Function(CharacterPagination) _then;
 
   @override
   $Res call({
@@ -74,7 +74,7 @@ class _$CharacterPAginationCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$CharacterPaginationCopyWith<$Res>
-    implements $CharacterPAginationCopyWith<$Res> {
+    implements $CharacterPaginationCopyWith<$Res> {
   factory _$CharacterPaginationCopyWith(_CharacterPagination value,
           $Res Function(_CharacterPagination) then) =
       __$CharacterPaginationCopyWithImpl<$Res>;
@@ -84,7 +84,7 @@ abstract class _$CharacterPaginationCopyWith<$Res>
 
 /// @nodoc
 class __$CharacterPaginationCopyWithImpl<$Res>
-    extends _$CharacterPAginationCopyWithImpl<$Res>
+    extends _$CharacterPaginationCopyWithImpl<$Res>
     implements _$CharacterPaginationCopyWith<$Res> {
   __$CharacterPaginationCopyWithImpl(
       _CharacterPagination _value, $Res Function(_CharacterPagination) _then)
@@ -124,14 +124,14 @@ class _$_CharacterPagination
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CharacterPAgination(page: $page, name: $name)';
+    return 'CharacterPagination(page: $page, name: $name)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'CharacterPAgination'))
+      ..add(DiagnosticsProperty('type', 'CharacterPagination'))
       ..add(DiagnosticsProperty('page', page))
       ..add(DiagnosticsProperty('name', name));
   }
@@ -159,7 +159,7 @@ class _$_CharacterPagination
           this, _$identity);
 }
 
-abstract class _CharacterPagination implements CharacterPAgination {
+abstract class _CharacterPagination implements CharacterPagination {
   factory _CharacterPagination({required int page, String? name}) =
       _$_CharacterPagination;
 

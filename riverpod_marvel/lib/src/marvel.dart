@@ -20,11 +20,11 @@ part 'marvel.g.dart';
 
 final dioProvider = Provider((ref) => Dio());
 
-final repositoryPRovider = Provider((ref) => MarvelRepository(ref.read));
+final repositoryProvider = Provider((ref) => MarvelRepository(ref.read));
 
 class MarvelRepository {
   MarvelRepository(
-    this.read, {
+    this._read, {
     int Function()? getCurrentTimestamp,
   }) : _getCurrentTimestamp = getCurrentTimestamp ??
             (() => DateTime.now().millisecondsSinceEpoch);
@@ -52,14 +52,14 @@ class MarvelRepository {
     );
 
     final result = MarvelListCharactersResponse(
-      chracters: response.data.results.map((e) {
+      characters: response.data.results.map((e) {
         return Character.fromJson(e);
       }).toList(growable: false),
       totalCount: response.data.total,
     );
 
     for (final character in result.characters) {
-      _characterCache[character.id.toSTring()] = character;
+      _characterCache[character.id.toString()] = character;
     }
 
     return result;
@@ -69,7 +69,7 @@ class MarvelRepository {
     String id, {
     CancelToken? cancelToken,
   }) async {
-    // Don't fetch the Character if it was already obtianed previously, either
+    // Don't fetch the Character if it was already obtained previously, either
     // in the home page or in the detail page.
     if (_characterCache.containsKey(id)) {
       return _characterCache[id]!;
@@ -97,7 +97,7 @@ class MarvelRepository {
       'https://gateway.marvel.com/v1/public/$path',
       cancelToken: cancelToken,
       queryParameters: <String, Object?>{
-        'apiKey': configs.publicKey,
+        'apikey': configs.publicKey,
         'ts': timestamp,
         'hash': hash,
         ...?queryParameters,

@@ -14,7 +14,7 @@ void main() {
       // uncomment to mock the http requests
 
       // overrides: [
-      //   dioProvider.overrideWithValue(FakeDio(null))
+      //   dioProvider.overrideWithValue(FakeDio(null)),
       // ],
       child: MyApp(),
     ),
@@ -52,7 +52,7 @@ class MyApp extends HookConsumerWidget {
         if (result == null) {
           return null;
         }
-        return MaterialPageRoute<void>(builder: (cotext) => result!);
+        return MaterialPageRoute<void>(builder: (context) => result!);
       },
       routes: {
         '/character': (c) => const CharacterView(),
@@ -66,12 +66,15 @@ class MyApp extends HookConsumerWidget {
 /// This implements the "Unfocus when tapping in empty space" behavior for the
 /// entire application
 class _Unfocus extends HookConsumerWidget {
-  const _Unfocus({Key? key, required this.child}) : super(key: key);
+  const _Unfocus({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
 
   final Widget child;
 
   @override
-  Widget build(BuildContext cotnext, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {

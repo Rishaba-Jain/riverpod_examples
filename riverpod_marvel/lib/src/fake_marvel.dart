@@ -15,7 +15,7 @@ final _charactersIronMan = _$_charactersIronManJsonLiteral;
 @JsonLiteral('characters_name= Iron man (.json')
 final _charactersIronMan2 = _$_charactersIronMan2JsonLiteral;
 
-@JsonLiteral('character1009369.json')
+@JsonLiteral('character_1009368.json')
 final _character1009368 = _$_character1009368JsonLiteral;
 
 class FakeDio implements Dio {
@@ -32,7 +32,7 @@ class FakeDio implements Dio {
     ProgressCallback? onReceiveProgress,
   }) async {
     print('hello $_apiKey $queryParameters');
-    if (_apiKey != null && queryParameters?['apiKey'] != _apiKey) {
+    if (_apiKey != null && queryParameters?['apikey'] != _apiKey) {
       throw StateError('Missing api key');
     }
 
@@ -54,7 +54,7 @@ class FakeDio implements Dio {
         }
         break;
     }
-    if (path == '?apiKey=$_apiKey') {}
+    if (path == '?apikey=$_apiKey') {}
     throw UnimplementedError();
   }
 

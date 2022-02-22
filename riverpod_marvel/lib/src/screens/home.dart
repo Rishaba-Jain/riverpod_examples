@@ -14,7 +14,7 @@ part 'home.freezed.dart';
 const kCharactersPageLimit = 50;
 
 @freezed
-class CharacterPAgination with _$CharacterPagination {
+class CharacterPagination with _$CharacterPagination {
   factory CharacterPagination({
     required int page,
     String? name,
@@ -22,7 +22,7 @@ class CharacterPAgination with _$CharacterPagination {
 }
 
 final characterPages = FutureProvider.autoDispose
-    .family<MarvelListCharacterResponse, CharacterPagination>(
+    .family<MarvelListCharactersResponse, CharacterPagination>(
   (ref, meta) async {
     // Cancel the page request if the UI no longer needs it before the request
     // is finished.
@@ -65,7 +65,7 @@ class CharacterOffset with _$CharacterOffset {
 final characterAtIndex =
     Provider.autoDispose.family<AsyncValue<Character>, CharacterOffset>(
   (ref, query) {
-    final offsetnPage = query.offset % kCharactersPageLimit;
+    final offsetInPage = query.offset % kCharactersPageLimit;
 
     final meta = CharacterPagination(
       page: query.offset ~/ kCharactersPageLimit,
@@ -181,7 +181,7 @@ class CharacterItem extends HookConsumerWidget {
           },
           child: Card(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Expanded(
                   child: Hero(

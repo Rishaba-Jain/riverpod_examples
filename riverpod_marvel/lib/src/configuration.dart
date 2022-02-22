@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-part 'configuration.freeezed.dart';
+part 'configuration.freezed.dart';
 part 'configuration.g.dart';
 
 @freezed
@@ -16,12 +16,12 @@ class Configuration with _$Configuration {
     required String privateKey,
   }) = _Configuration;
 
-  factory _Configuration.fromJson(Map<String, Object?> json) =>
+  factory Configuration.fromJson(Map<String, Object?> json) =>
       _$ConfigurationFromJson(json);
 }
 
 final configurationsProvider = FutureProvider<Configuration>((_) async {
-  final context = json.decode(
+  final content = json.decode(
     await rootBundle.loadString('assets/configurations.json'),
   ) as Map<String, Object?>;
 
